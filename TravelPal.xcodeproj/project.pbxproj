@@ -13,6 +13,10 @@
 		8F7C96E42381752100767AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C96E22381752100767AC7 /* LaunchScreen.storyboard */; };
 		8F7C96EE2381845700767AC7 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96ED2381845700767AC7 /* TripModel.swift */; };
 		8F7C96F0238184B900767AC7 /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96EF238184B900767AC7 /* TripFunctions.swift */; };
+		8F7C96F22381868400767AC7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96F12381868400767AC7 /* Data.swift */; };
+		8F7C96F623818C0300767AC7 /* TripsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C96F523818C0300767AC7 /* TripsView.storyboard */; };
+		8F7C96F823818C1A00767AC7 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96F723818C1A00767AC7 /* TripsViewController.swift */; };
+		8F7C96FA238197B600767AC7 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96F9238197B600767AC7 /* TripTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		8F7C96E52381752100767AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F7C96ED2381845700767AC7 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		8F7C96EF238184B900767AC7 /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
+		8F7C96F12381868400767AC7 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8F7C96F523818C0300767AC7 /* TripsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripsView.storyboard; sourceTree = "<group>"; };
+		8F7C96F723818C1A00767AC7 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		8F7C96F9238197B600767AC7 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		8F7C96D62381751E00767AC7 /* TravelPal */ = {
 			isa = PBXGroup;
 			children = (
+				8F7C96F323818BDF00767AC7 /* Views */,
 				8F7C96EB2381841D00767AC7 /* Model */,
 				8F7C96D72381751E00767AC7 /* AppDelegate.swift */,
 				8F7C96D92381751E00767AC7 /* SceneDelegate.swift */,
@@ -70,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				8F7C96EC2381843C00767AC7 /* Trip */,
+				8F7C96F12381868400767AC7 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,6 +91,24 @@
 				8F7C96EF238184B900767AC7 /* TripFunctions.swift */,
 			);
 			path = Trip;
+			sourceTree = "<group>";
+		};
+		8F7C96F323818BDF00767AC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C96F423818BE900767AC7 /* TripsView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F7C96F423818BE900767AC7 /* TripsView */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C96F523818C0300767AC7 /* TripsView.storyboard */,
+				8F7C96F723818C1A00767AC7 /* TripsViewController.swift */,
+				8F7C96F9238197B600767AC7 /* TripTableViewCell.swift */,
+			);
+			path = TripsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7C96E42381752100767AC7 /* LaunchScreen.storyboard in Resources */,
+				8F7C96F623818C0300767AC7 /* TripsView.storyboard in Resources */,
 				8F7C96E12381752100767AC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,7 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7C96D82381751E00767AC7 /* AppDelegate.swift in Sources */,
+				8F7C96FA238197B600767AC7 /* TripTableViewCell.swift in Sources */,
+				8F7C96F22381868400767AC7 /* Data.swift in Sources */,
 				8F7C96DA2381751E00767AC7 /* SceneDelegate.swift in Sources */,
+				8F7C96F823818C1A00767AC7 /* TripsViewController.swift in Sources */,
 				8F7C96F0238184B900767AC7 /* TripFunctions.swift in Sources */,
 				8F7C96EE2381845700767AC7 /* TripModel.swift in Sources */,
 			);

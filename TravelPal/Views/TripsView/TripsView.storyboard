@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z7f-l5-5Js">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trips View Controller-->
+        <scene sceneID="a8Q-K7-DLh">
+            <objects>
+                <viewController id="z7f-l5-5Js" customClass="TripsViewController" customModule="TravelPal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xtm-0C-eEY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ill-7l-Rcw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TripCell" rowHeight="160" id="kP2-QR-56X" customClass="TripTableViewCell" customModule="TravelPal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kP2-QR-56X" id="L57-Qg-RGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU5-JX-WCQ">
+                                                    <rect key="frame" x="8" y="8" width="398" height="144"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg2-J9-gon">
+                                                            <rect key="frame" x="8" y="47" width="382" height="50.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Bg2-J9-gon" secondAttribute="trailing" constant="8" id="2Z1-35-sBZ"/>
+                                                        <constraint firstItem="Bg2-J9-gon" firstAttribute="centerY" secondItem="fU5-JX-WCQ" secondAttribute="centerY" id="mFI-uz-l0e"/>
+                                                        <constraint firstItem="Bg2-J9-gon" firstAttribute="leading" secondItem="fU5-JX-WCQ" secondAttribute="leading" constant="8" id="wJi-kD-RnE"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fU5-JX-WCQ" firstAttribute="leading" secondItem="L57-Qg-RGw" secondAttribute="leading" constant="8" id="8ro-dg-973"/>
+                                                <constraint firstAttribute="bottom" secondItem="fU5-JX-WCQ" secondAttribute="bottom" constant="8" id="Umf-OE-NMa"/>
+                                                <constraint firstAttribute="trailing" secondItem="fU5-JX-WCQ" secondAttribute="trailing" constant="8" id="X4b-aY-5tZ"/>
+                                                <constraint firstItem="fU5-JX-WCQ" firstAttribute="top" secondItem="L57-Qg-RGw" secondAttribute="top" constant="8" id="bQ8-hN-fr6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardView" destination="fU5-JX-WCQ" id="fCb-JJ-3YF"/>
+                                            <outlet property="tripNameLabel" destination="Bg2-J9-gon" id="Rrm-vw-2J6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ill-7l-Rcw" secondAttribute="bottom" id="7y1-Uq-ORJ"/>
+                            <constraint firstItem="ill-7l-Rcw" firstAttribute="trailing" secondItem="Ae4-wQ-nBA" secondAttribute="trailing" id="EIy-g9-3ph"/>
+                            <constraint firstItem="ill-7l-Rcw" firstAttribute="leading" secondItem="Ae4-wQ-nBA" secondAttribute="leading" id="IdN-A1-uMu"/>
+                            <constraint firstItem="ill-7l-Rcw" firstAttribute="top" secondItem="Xtm-0C-eEY" secondAttribute="top" id="ebu-KL-Hlr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ae4-wQ-nBA"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ill-7l-Rcw" id="BNK-Ke-Ff1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81B-FN-x2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="-42.1875"/>
+        </scene>
+    </scenes>
+</document>
