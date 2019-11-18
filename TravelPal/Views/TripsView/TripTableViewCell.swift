@@ -17,11 +17,11 @@ class TripTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cardView.layer.shadowOpacity = 1
-        cardView.layer.shadowOffset = CGSize.zero
-        cardView.layer.shadowColor = UIColor.darkGray.cgColor
-        cardView.layer.cornerRadius = cardView.frame.width * 0.05
+        cardView.addShadowAndRoundedCorners()
+        cardView.backgroundColor = Theme.accent
+        tripNameLabel.font = UIFont(name: Theme.displayFont, size: 32)
     }
+    
     
     func setup(trip: TripModel){
         tripNameLabel.text = trip.title

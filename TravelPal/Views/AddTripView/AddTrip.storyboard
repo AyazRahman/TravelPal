@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aIZ-ko-4jG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Trip View Controller-->
+        <scene sceneID="WUL-rq-6Va">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="aIZ-ko-4jG" customClass="AddTripViewController" customModule="TravelPal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAT-DG-mdH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLV-Br-SAo">
+                                <rect key="frame" x="20" y="349.5" width="374" height="207"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQx-gW-UPy">
+                                        <rect key="frame" x="8" y="18" width="358" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-7g-UEn">
+                                        <rect key="frame" x="8" y="86" width="358" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-NH-Sds">
+                                        <rect key="frame" x="8" y="155" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="aIZ-ko-4jG" eventType="touchUpInside" id="hYi-pK-ZCL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN0-Ya-Kr3">
+                                        <rect key="frame" x="266" y="155" width="100" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="aIZ-ko-4jG" eventType="touchUpInside" id="p4J-sV-wfL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="207" id="CIN-19-eJ5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.3984375" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sLV-Br-SAo" firstAttribute="leading" secondItem="mN5-mC-Ce7" secondAttribute="leading" constant="20" id="5yo-sb-5py"/>
+                            <constraint firstItem="mN5-mC-Ce7" firstAttribute="trailing" secondItem="sLV-Br-SAo" secondAttribute="trailing" constant="20" id="m2d-p7-6iS"/>
+                            <constraint firstItem="sLV-Br-SAo" firstAttribute="centerY" secondItem="mN5-mC-Ce7" secondAttribute="centerY" id="rvs-w4-0cn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mN5-mC-Ce7"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButtonRef" destination="JBs-NH-Sds" id="uq5-zz-9iu"/>
+                        <outlet property="inputField" destination="gqL-7g-UEn" id="5lU-Qe-ASD"/>
+                        <outlet property="popUpView" destination="sLV-Br-SAo" id="klG-9w-Qrp"/>
+                        <outlet property="saveButtonRef" destination="UN0-Ya-Kr3" id="J1U-lU-JM2"/>
+                        <outlet property="titleLabel" destination="qQx-gW-UPy" id="8R9-2G-3wY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3PF-WM-C1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147.8260869565217" y="-43.526785714285715"/>
+        </scene>
+    </scenes>
+</document>

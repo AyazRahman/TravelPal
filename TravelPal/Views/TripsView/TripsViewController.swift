@@ -12,12 +12,18 @@ class TripsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-
+    @IBOutlet weak var addButtonRef: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        view.backgroundColor = Theme.background
+        
+        addButtonRef.createFloatingButton()
+        
         // weak self since tripsfunctions will be accessed in multiple classes
         TripFunctions.readTrips {[weak self] in
             self?.tableView.reloadData()

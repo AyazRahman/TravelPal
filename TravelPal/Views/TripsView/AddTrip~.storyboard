@@ -60,13 +60,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-5J-hiH">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-5J-hiH">
                                 <rect key="frame" x="336" y="806" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="dev-I3-UUO" kind="presentation" id="keG-aI-ZSf"/>
+                                    <segue destination="aIZ-ko-4jG" kind="presentation" id="keG-aI-ZSf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,11 +88,18 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="-42.1875"/>
         </scene>
-        <!--AddTrip-->
-        <scene sceneID="cdh-sS-9Lf">
+        <!--View Controller-->
+        <scene sceneID="WUL-rq-6Va">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddTrip" id="dev-I3-UUO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c87-mc-VyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController modalPresentationStyle="overCurrentContext" id="aIZ-ko-4jG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAT-DG-mdH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.3984375" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mN5-mC-Ce7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3PF-WM-C1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149" y="-43"/>
         </scene>
