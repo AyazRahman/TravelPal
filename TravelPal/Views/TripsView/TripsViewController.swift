@@ -29,6 +29,15 @@ class TripsViewController: UIViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddTrip"{
+            let destination = segue.destination as! AddTripViewController
+            destination.finishedAdding = { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension TripsViewController: UITableViewDataSource{

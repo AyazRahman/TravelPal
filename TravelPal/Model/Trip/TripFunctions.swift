@@ -10,7 +10,9 @@ import Foundation
 
 class TripFunctions {
     static func createTrip(tripModel: TripModel){
-        
+        DispatchQueue.global(qos: .userInteractive).async {
+            Data.trips.append(tripModel)
+        }
     }
     
     static func readTrips(completion: @escaping () -> ()){

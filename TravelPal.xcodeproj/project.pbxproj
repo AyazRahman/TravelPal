@@ -25,6 +25,7 @@
 		8F7C970823823F0A00767AC7 /* AddTrip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C970723823F0A00767AC7 /* AddTrip.storyboard */; };
 		8F7C970B23823F7000767AC7 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C970A23823F7000767AC7 /* AddTripViewController.swift */; };
 		8F7C970D23824A3B00767AC7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C970C23824A3B00767AC7 /* OpenSans-Regular.ttf */; };
+		8FC4B31E2383DA51003BB6DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FC4B31D2383DA51003BB6DD /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		8F7C970723823F0A00767AC7 /* AddTrip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTrip.storyboard; sourceTree = "<group>"; };
 		8F7C970A23823F7000767AC7 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		8F7C970C23824A3B00767AC7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		8FC4B31D2383DA51003BB6DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				8F7C970123822DEB00767AC7 /* OleoScript-Regular.ttf */,
 				8F7C970C23824A3B00767AC7 /* OpenSans-Regular.ttf */,
 				8F7C97032382307B00767AC7 /* Colors.xcassets */,
+				8FC4B31D2383DA51003BB6DD /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7C97042382307B00767AC7 /* Colors.xcassets in Resources */,
+				8FC4B31E2383DA51003BB6DD /* Images.xcassets in Resources */,
 				8F7C96E42381752100767AC7 /* LaunchScreen.storyboard in Resources */,
 				8F7C970223822DEB00767AC7 /* OleoScript-Regular.ttf in Resources */,
 				8F7C970D23824A3B00767AC7 /* OpenSans-Regular.ttf in Resources */,
