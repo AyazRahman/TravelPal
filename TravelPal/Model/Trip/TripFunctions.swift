@@ -34,6 +34,9 @@ class TripFunctions {
     }
     
     static func deleteTrip(tripModel: TripModel){
+        if let index = Data.trips.firstIndex(where: {$0.id.uuidString == tripModel.id.uuidString}) {
+            Data.trips.remove(at: index)
+        }
         
     }
 }
