@@ -15,6 +15,7 @@ class AddTripViewController: UIViewController {
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var cancelButtonRef: UIButton!
     @IBOutlet weak var saveButtonRef: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var finishedAdding: (() -> ())?
     
@@ -25,6 +26,14 @@ class AddTripViewController: UIViewController {
         popUpView.backgroundColor = Theme.background
         
         titleLabel.font = UIFont(name: Theme.displayFont, size: 25)
+        //add label shadow for better readability
+        titleLabel.layer.shadowColor = UIColor.white.cgColor
+        titleLabel.layer.shadowOpacity = 1
+        titleLabel.layer.shadowOffset = CGSize.zero
+        titleLabel.layer.shadowRadius = 10
+        //end label shadow
+        
+        imageView.layer.cornerRadius = imageView.frame.width * 0.05
         
         
         cancelButtonRef.createButtonStyle()
@@ -32,6 +41,8 @@ class AddTripViewController: UIViewController {
         
         inputField.font = UIFont(name: Theme.readingFont, size: 17)
         inputField.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,7 +64,7 @@ class AddTripViewController: UIViewController {
             return
         }
         
-        TripFunctions.createTrip(tripModel: TripModel(title: newTrip))
+        TripFunctions.createTrip(tripModel: TripModel(title: newTrip,image: imageView.image))
         if let finishedAdding = finishedAdding{
             finishedAdding()
         }
@@ -61,7 +72,33 @@ class AddTripViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBAction func addImageButton(_ sender: Any) {
+        let controller = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            controller.sourceType = .camera
+            
+        } else {
+            controller.sourceType = .photoLibrary
+        }
+        
+        controller.allowsEditing = true
+        controller.delegate = self
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+}
 
+extension AddTripViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            self.imageView.image = image
+        }
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
 }
 
 extension AddTripViewController: UITextFieldDelegate{
