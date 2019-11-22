@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLV-Br-SAo">
-                                <rect key="frame" x="20" y="349.5" width="374" height="207"/>
+                                <rect key="frame" x="20" y="344.5" width="374" height="207"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jev-bT-cxe">
-                                        <rect key="frame" x="0.0" y="-1" width="374" height="207"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="207"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Trip Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-7g-UEn">
@@ -72,8 +72,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.3984375" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sLV-Br-SAo" firstAttribute="leading" secondItem="mN5-mC-Ce7" secondAttribute="leading" constant="20" id="5yo-sb-5py"/>
+                            <constraint firstItem="sLV-Br-SAo" firstAttribute="centerY" secondItem="TAT-DG-mdH" secondAttribute="centerY" id="LEm-Id-Z5S"/>
                             <constraint firstItem="mN5-mC-Ce7" firstAttribute="trailing" secondItem="sLV-Br-SAo" secondAttribute="trailing" constant="20" id="m2d-p7-6iS"/>
-                            <constraint firstItem="sLV-Br-SAo" firstAttribute="centerY" secondItem="mN5-mC-Ce7" secondAttribute="centerY" id="rvs-w4-0cn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mN5-mC-Ce7"/>
                     </view>

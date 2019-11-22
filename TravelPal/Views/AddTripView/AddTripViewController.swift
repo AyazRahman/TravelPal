@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class AddTripViewController: UIViewController {
 
@@ -73,16 +74,74 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addImageButton(_ sender: Any) {
-        let controller = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            controller.sourceType = .camera
-            
-        } else {
-            controller.sourceType = .photoLibrary
+        
+        //define the actionSheet to show options
+        let actionSheet = UIAlertController(title: "Image", message: "Select the source", preferredStyle: .actionSheet)
+        //add actions to the action sheet
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                self.checkCameraAccess()
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { (_) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                self.checkPhotoLibraryAccess()
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(actionSheet, animated: true)
+        
+    }
+    
+    //This function checks the authorization of camera for the app
+    func checkCameraAccess(){
+        photoPickerController("camera")
+    }
+    
+    //This function checks the authorization of photo library for the app
+    func checkPhotoLibraryAccess(){
+        PHPhotoLibrary.requestAuthorization { (access) in
+            switch access{
+                case .authorized:
+                    DispatchQueue.main.sync{
+                        self.photoPickerController("photo")
+                }
+                case .notDetermined:
+                    if access == PHAuthorizationStatus.authorized{
+                        DispatchQueue.main.sync{
+                            self.photoPickerController("photo")
+                        }
+                }
+                case .restricted:
+                    let alert = UIAlertController(title: "Photo Library Restricted", message: "Photo Library is restricted and cannot be accessed", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                case .denied:
+                    let alert = UIAlertController(title: "Photo Library Access Denied", message: "Photo Library was previously denied. Please update Settings to gain access", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Go to Settings", style: .default, handler: { (action) in
+                        DispatchQueue.main.async {
+                            let url = URL(string: UIApplication.openSettingsURLString)!
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                    DispatchQueue.main.sync {
+                        self.present(alert, animated: true)
+                }
+                @unknown default:
+                    print("default")
+                    fatalError()
+            }
         }
         
+    }
+    
+    func photoPickerController(_ source: String){
+        //set up image picker controller
+        let controller = UIImagePickerController()
         controller.allowsEditing = true
         controller.delegate = self
+        controller.sourceType = source == "camera" ? .camera : .photoLibrary
         self.present(controller, animated: true, completion: nil)
     }
     
@@ -93,11 +152,11 @@ extension AddTripViewController: UINavigationControllerDelegate, UIImagePickerCo
         if let image = info[.editedImage] as? UIImage {
             self.imageView.image = image
         }
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
 }
 
