@@ -48,6 +48,7 @@ class AddTripViewController: UIViewController {
             let trip = Data.trips[index]
             inputField.text = trip.title
             imageView.image = trip.image
+            titleLabel.text = "Edit Trip"
         }
         
         
@@ -155,6 +156,7 @@ class AddTripViewController: UIViewController {
         controller.sourceType = source == "camera" ? .camera : .photoLibrary
         self.present(controller, animated: true, completion: nil)
     }
+    
     
 }
 

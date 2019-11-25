@@ -39,6 +39,7 @@ class TripsViewController: UIViewController {
             destination.finishedAdding = { [weak self] in
                 self?.tableView.reloadData()
             }
+            tripEditIndex = nil
         }
     }
 }
