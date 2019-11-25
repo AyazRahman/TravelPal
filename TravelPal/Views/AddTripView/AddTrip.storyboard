@@ -71,9 +71,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.3984375" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sLV-Br-SAo" firstAttribute="leading" secondItem="mN5-mC-Ce7" secondAttribute="leading" constant="20" id="5yo-sb-5py"/>
                             <constraint firstItem="sLV-Br-SAo" firstAttribute="centerY" secondItem="TAT-DG-mdH" secondAttribute="centerY" id="LEm-Id-Z5S"/>
-                            <constraint firstItem="mN5-mC-Ce7" firstAttribute="trailing" secondItem="sLV-Br-SAo" secondAttribute="trailing" constant="20" id="m2d-p7-6iS"/>
+                            <constraint firstItem="mN5-mC-Ce7" firstAttribute="trailing" secondItem="sLV-Br-SAo" secondAttribute="trailing" constant="20" id="ZVc-Jr-pMY"/>
+                            <constraint firstItem="sLV-Br-SAo" firstAttribute="leading" secondItem="mN5-mC-Ce7" secondAttribute="leading" constant="20" id="zJt-LF-Mcc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mN5-mC-Ce7"/>
                     </view>

@@ -9,6 +9,8 @@
 import UIKit
 
 class TripsViewController: UIViewController {
+    
+    var tripEditIndex: Int?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,6 +35,7 @@ class TripsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddTrip"{
             let destination = segue.destination as! AddTripViewController
+            destination.tripEditIndex = tripEditIndex
             destination.finishedAdding = { [weak self] in
                 self?.tableView.reloadData()
             }
@@ -88,6 +91,17 @@ extension TripsViewController: UITableViewDelegate{
         delete.image = UIImage(named: "Delete")
         
         return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
+            self.tripEditIndex = indexPath.row
+            self.performSegue(withIdentifier: "AddTrip", sender: nil)
+            actionPerformed(true)
+        }
+        edit.image = UIImage(named: "EditIcon")
+        edit.backgroundColor = UIColor(named: "Edit")
+        return UISwipeActionsConfiguration(actions: [edit])
     }
     
 }

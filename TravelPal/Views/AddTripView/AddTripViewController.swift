@@ -19,6 +19,7 @@ class AddTripViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var finishedAdding: (() -> ())?
+    var tripEditIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,12 @@ class AddTripViewController: UIViewController {
         inputField.font = UIFont(name: Theme.readingFont, size: 17)
         inputField.delegate = self
         
+        if let index = tripEditIndex{
+            let trip = Data.trips[index]
+            inputField.text = trip.title
+            imageView.image = trip.image
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -64,8 +71,12 @@ class AddTripViewController: UIViewController {
 
             return
         }
+        if let index = tripEditIndex{
+            TripFunctions.updateTrip(at: index, title: newTrip, image: imageView.image)
+        }else{
+            TripFunctions.createTrip(tripModel: TripModel(title: newTrip,image: imageView.image))
+        }
         
-        TripFunctions.createTrip(tripModel: TripModel(title: newTrip,image: imageView.image))
         if let finishedAdding = finishedAdding{
             finishedAdding()
         }
@@ -78,12 +89,12 @@ class AddTripViewController: UIViewController {
         //define the actionSheet to show options
         let actionSheet = UIAlertController(title: "Image", message: "Select the source", preferredStyle: .actionSheet)
         //add actions to the action sheet
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 self.checkCameraAccess()
             }
         }))
-        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { (_) in
+        actionSheet.addAction(UIAlertAction(title: "Photo", style: .default, handler: { (action) in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 self.checkPhotoLibraryAccess()
             }
@@ -152,11 +163,11 @@ extension AddTripViewController: UINavigationControllerDelegate, UIImagePickerCo
         if let image = info[.editedImage] as? UIImage {
             self.imageView.image = image
         }
-        picker.dismiss(animated: true)
+        dismiss(animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
+        dismiss(animated: true)
     }
 }
 

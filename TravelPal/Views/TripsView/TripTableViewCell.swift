@@ -27,9 +27,9 @@ class TripTableViewCell: UITableViewCell {
     
     func setup(trip: TripModel){
         tripNameLabel.text = trip.title
-        if let image = trip.image{
-            cellImageView.image = image
-        }
+        
+        cellImageView.image = trip.image
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
