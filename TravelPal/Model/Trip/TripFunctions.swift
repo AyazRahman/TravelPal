@@ -11,18 +11,18 @@ import UIKit
 
 class TripFunctions {
     static func createTrip(tripModel: TripModel){
-        DispatchQueue.global(qos: .userInteractive).async {
-            Data.trips.append(tripModel)
-        }
+        
+        Data.trips.append(tripModel)
+        
     }
     
     static func readTrips(completion: @escaping () -> ()){
         DispatchQueue.global(qos: .userInteractive).async {
-            if Data.trips.count == 0 {
+            /*if Data.trips.count == 0 {
                 Data.trips.append(TripModel(title: "Russia"))
                 Data.trips.append(TripModel(title: "Albania"))
                 Data.trips.append(TripModel(title: "Madagascar"))
-            }
+            }*/
         }
         DispatchQueue.main.async {
             completion()

@@ -91,10 +91,57 @@
                     </view>
                     <connections>
                         <outlet property="addButtonRef" destination="LBH-5J-hiH" id="q2Z-Cz-0RI"/>
+                        <outlet property="helpView" destination="ZH4-Uk-xFd" id="7qp-iP-dp5"/>
                         <outlet property="tableView" destination="ill-7l-Rcw" id="BNK-Ke-Ff1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81B-FN-x2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" id="ZH4-Uk-xFd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cUm-1L-BR5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="iYx-1F-KjX">
+                                <rect key="frame" x="18" y="40" width="378" height="355"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe Rows for more actions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEO-Op-zlp">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwipeLeft" translatesAutoresizingMaskIntoConstraints="NO" id="lvh-9I-4ZY">
+                                        <rect key="frame" x="0.0" y="65" width="378" height="131"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SwipeRight" translatesAutoresizingMaskIntoConstraints="NO" id="Mlr-iV-hBf">
+                                        <rect key="frame" x="0.0" y="225" width="378" height="130"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyF-Oy-dix" customClass="AppButton" customModule="TravelPal" customModuleProvider="target">
+                                <rect key="frame" x="18" y="812" width="378" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8Nl-g3-tG1"/>
+                                </constraints>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="z7f-l5-5Js" eventType="touchUpInside" id="01y-1T-4Oe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="iYx-1F-KjX" firstAttribute="top" secondItem="cUm-1L-BR5" secondAttribute="top" constant="40" id="7br-SD-SFA"/>
+                            <constraint firstAttribute="trailing" secondItem="iYx-1F-KjX" secondAttribute="trailing" constant="18" id="D06-oU-GVm"/>
+                            <constraint firstAttribute="bottom" secondItem="cyF-Oy-dix" secondAttribute="bottom" constant="40" id="Df2-wG-YHk"/>
+                            <constraint firstItem="cyF-Oy-dix" firstAttribute="leading" secondItem="cUm-1L-BR5" secondAttribute="leading" constant="18" id="b2R-3B-OoT"/>
+                            <constraint firstItem="iYx-1F-KjX" firstAttribute="leading" secondItem="cUm-1L-BR5" secondAttribute="leading" constant="18" id="ckf-Zg-1V4"/>
+                            <constraint firstAttribute="trailing" secondItem="cyF-Oy-dix" secondAttribute="trailing" constant="18" id="vLD-V9-RXm"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="-42.1875"/>
         </scene>
@@ -107,4 +154,8 @@
             <point key="canvasLocation" x="1149" y="-43"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SwipeLeft" width="334" height="131"/>
+        <image name="SwipeRight" width="332" height="130"/>
+    </resources>
 </document>

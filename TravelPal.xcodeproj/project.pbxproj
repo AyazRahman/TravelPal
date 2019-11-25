@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5F5666238BE6000096FA6B /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5665238BE6000096FA6B /* AppButton.swift */; };
 		8F7C96D82381751E00767AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96D72381751E00767AC7 /* AppDelegate.swift */; };
 		8F7C96DA2381751E00767AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96D92381751E00767AC7 /* SceneDelegate.swift */; };
 		8F7C96E12381752100767AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C96E02381752100767AC7 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F5F5665238BE6000096FA6B /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		8F7C96D42381751E00767AC7 /* TravelPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7C96D72381751E00767AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7C96D92381751E00767AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F5F5667238BE7D90096FA6B /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				8F5F5665238BE6000096FA6B /* AppButton.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
 		8F7C96CB2381751E00767AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				8F7C96FE23822D0E00767AC7 /* Resources */,
-				8F7C96FB238229CD00767AC7 /* Extensions */,
 				8F7C96F323818BDF00767AC7 /* Views */,
 				8F7C96EB2381841D00767AC7 /* Model */,
 				8F7C96D72381751E00767AC7 /* AppDelegate.swift */,
 				8F7C96D92381751E00767AC7 /* SceneDelegate.swift */,
-				8F7C96E02381752100767AC7 /* Assets.xcassets */,
 				8F7C96E22381752100767AC7 /* LaunchScreen.storyboard */,
 				8F7C96E52381752100767AC7 /* Info.plist */,
 			);
@@ -144,11 +152,14 @@
 		8F7C96FE23822D0E00767AC7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F5F5667238BE7D90096FA6B /* CustomControls */,
+				8F7C96FB238229CD00767AC7 /* Extensions */,
 				8F7C96FF23822D2300767AC7 /* Themes.swift */,
 				8F7C970123822DEB00767AC7 /* OleoScript-Regular.ttf */,
 				8F7C970C23824A3B00767AC7 /* OpenSans-Regular.ttf */,
 				8F7C97032382307B00767AC7 /* Colors.xcassets */,
 				8FC4B31D2383DA51003BB6DD /* Images.xcassets */,
+				8F7C96E02381752100767AC7 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				8F7C96D82381751E00767AC7 /* AppDelegate.swift in Sources */,
 				8F7C96FA238197B600767AC7 /* TripTableViewCell.swift in Sources */,
 				8F7C96F22381868400767AC7 /* Data.swift in Sources */,
+				8F5F5666238BE6000096FA6B /* AppButton.swift in Sources */,
 				8F7C96DA2381751E00767AC7 /* SceneDelegate.swift in Sources */,
 				8F7C970023822D2300767AC7 /* Themes.swift in Sources */,
 				8F7C970623823A8C00767AC7 /* UIButtonExtensions.swift in Sources */,

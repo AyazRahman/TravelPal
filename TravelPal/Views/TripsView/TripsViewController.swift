@@ -11,13 +11,29 @@ import UIKit
 class TripsViewController: UIViewController {
     
     var tripEditIndex: Int?
-
+    let seenHelpKey = "SeenHelp"
+    
+    @IBOutlet var helpView: UIVisualEffectView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var addButtonRef: UIButton!
     
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.helpView.alpha = 0
+        }) { (success) in
+            self.helpView.removeFromSuperview()
+            UserDefaults.standard.set(true, forKey: self.seenHelpKey)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,10 +43,26 @@ class TripsViewController: UIViewController {
         addButtonRef.createFloatingButton()
         
         // weak self since tripsfunctions will be accessed in multiple classes
-        TripFunctions.readTrips {[weak self] in
-            self?.tableView.reloadData()
+        TripFunctions.readTrips {[unowned self] in
+            self.tableView.reloadData()
+            self.showHelp()
         }
     }
+    
+    fileprivate func showHelp() {
+        if !Data.trips.isEmpty {
+            if !UserDefaults.standard.bool(forKey: self.seenHelpKey){
+                self.view.addSubview(self.helpView)
+                self.helpView.frame = self.view.frame
+                self.helpView.alpha = 0
+                UIView.animate(withDuration: 0.5) {
+                    self.helpView.alpha = 1
+                }
+            }
+        }
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddTrip"{
@@ -38,6 +70,7 @@ class TripsViewController: UIViewController {
             destination.tripEditIndex = tripEditIndex
             destination.finishedAdding = { [weak self] in
                 self?.tableView.reloadData()
+                self?.showHelp()
             }
             tripEditIndex = nil
         }
