@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trips View Controller-->
+        <!--Trips-->
         <scene sceneID="a8Q-K7-DLh">
             <objects>
                 <viewController id="z7f-l5-5Js" customClass="TripsViewController" customModule="TravelPal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xtm-0C-eEY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ill-7l-Rcw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="8FY-7l-nS4">
                                     <rect key="frame" x="0.0" y="216" width="414" height="1"/>
@@ -71,7 +71,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-5J-hiH">
-                                <rect key="frame" x="336" y="806" width="56" height="56"/>
+                                <rect key="frame" x="336" y="718" width="56" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <state key="normal" title="+"/>
@@ -89,7 +89,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ae4-wQ-nBA"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hf4-5a-jpR"/>
+                    <navigationItem key="navigationItem" title="Trips" id="hf4-5a-jpR"/>
                     <connections>
                         <outlet property="addButtonRef" destination="LBH-5J-hiH" id="q2Z-Cz-0RI"/>
                         <outlet property="helpView" destination="ZH4-Uk-xFd" id="7qp-iP-dp5"/>
@@ -159,7 +159,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SON-24-In8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rM0-Os-pXa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rM0-Os-pXa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

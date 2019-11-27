@@ -15,12 +15,12 @@ class HeaderTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.font = UIFont(name: Theme.bodyFontBold, size: 17)
-        subTitleLabel.font = UIFont(name: Theme.bodyFont, size: 15)
+        titleLabel.font = UIFont(name: Theme.bodyFontBold, size: 20)
+        subTitleLabel.font = UIFont(name: Theme.bodyFont, size: 17)
     }
 
     func setup(model: DayModel){
         titleLabel.text = model.title
-        subTitleLabel.text = model.title
+        subTitleLabel.text = model.subTitle
     }
 }

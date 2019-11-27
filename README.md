@@ -9,6 +9,7 @@
 * Adding swipe action options to tableview cells
 * Using the Scene doc to provide help screens
 * Using unwind for backward navigation
+* Reducing hardcoded strings in code using String(describing: Class) 
  
  ## Resources
  * Font source: Google fonts. Fonts used: Display font: Oleo Script, Reading font: Open Sans

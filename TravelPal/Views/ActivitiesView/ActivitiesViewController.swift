@@ -34,7 +34,7 @@ class ActivitiesViewController: UIViewController {
             
         }
         
-        sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: "ActivityHeader")?.contentView.bounds.height ?? 0
+        sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 0
     }
    
 }
@@ -45,16 +45,12 @@ extension ActivitiesViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let day = currentTrip?.days[indexPath.section].activities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ActivitiesTableViewCell.identifier) as! ActivitiesTableViewCell
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "activityCell")
+        cell.setup(model: day!)
         
-        if cell ==  nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "activityCell")
-        }
-        
-        cell?.textLabel?.text = currentTrip?.days[indexPath.section].activities[indexPath.row].title
-        
-        return cell!
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,7 +66,7 @@ extension ActivitiesViewController: UITableViewDataSource{
 extension ActivitiesViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let day = currentTrip?.days[section]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityHeader") as! HeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
         cell.setup(model: day!)
         return cell.contentView
     }

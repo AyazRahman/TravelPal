@@ -52,7 +52,7 @@ class TripsViewController: UIViewController {
     fileprivate func showHelp() {
         if !UserDefaults.standard.bool(forKey: self.seenHelpKey), !Data.trips.isEmpty {
             self.view.addSubview(self.helpView)
-            self.helpView.frame = self.view.frame
+            self.helpView.frame = self.view.bounds
             self.helpView.alpha = 0
             UIView.animate(withDuration: 0.5) {
                 self.helpView.alpha = 1
