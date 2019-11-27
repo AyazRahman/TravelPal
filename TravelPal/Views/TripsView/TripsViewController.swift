@@ -50,14 +50,12 @@ class TripsViewController: UIViewController {
     }
     
     fileprivate func showHelp() {
-        if !Data.trips.isEmpty {
-            if !UserDefaults.standard.bool(forKey: self.seenHelpKey){
-                self.view.addSubview(self.helpView)
-                self.helpView.frame = self.view.frame
-                self.helpView.alpha = 0
-                UIView.animate(withDuration: 0.5) {
-                    self.helpView.alpha = 1
-                }
+        if !UserDefaults.standard.bool(forKey: self.seenHelpKey), !Data.trips.isEmpty {
+            self.view.addSubview(self.helpView)
+            self.helpView.frame = self.view.frame
+            self.helpView.alpha = 0
+            UIView.animate(withDuration: 0.5) {
+                self.helpView.alpha = 1
             }
         }
     }
@@ -138,4 +136,14 @@ extension TripsViewController: UITableViewDelegate{
         return UISwipeActionsConfiguration(actions: [edit])
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let trip = Data.trips[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "ActivitiesView", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController() as! ActivitiesViewController
+        
+        vc.tripID = trip.id
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

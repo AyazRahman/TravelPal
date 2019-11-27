@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z7f-l5-5Js">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SON-24-In8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -89,6 +89,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ae4-wQ-nBA"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hf4-5a-jpR"/>
                     <connections>
                         <outlet property="addButtonRef" destination="LBH-5J-hiH" id="q2Z-Cz-0RI"/>
                         <outlet property="helpView" destination="ZH4-Uk-xFd" id="7qp-iP-dp5"/>
@@ -143,7 +144,7 @@
                     <blurEffect style="dark"/>
                 </visualEffectView>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="-42.1875"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="-42.1875"/>
         </scene>
         <!--AddTrip-->
         <scene sceneID="cdh-sS-9Lf">
@@ -151,11 +152,30 @@
                 <viewControllerPlaceholder storyboardName="AddTrip" id="dev-I3-UUO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c87-mc-VyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="-43"/>
+            <point key="canvasLocation" x="2057.971014492754" y="-43.526785714285715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="edq-ig-WRM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SON-24-In8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rM0-Os-pXa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z7f-l5-5Js" kind="relationship" relationship="rootViewController" id="2cm-HJ-p8l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKJ-uk-1ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="-42.1875"/>
         </scene>
     </scenes>
     <resources>
         <image name="SwipeLeft" width="334" height="131"/>
         <image name="SwipeRight" width="332" height="130"/>
     </resources>
+    <color key="tintColor" name="Tint"/>
 </document>

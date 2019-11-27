@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8F5F5666238BE6000096FA6B /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5665238BE6000096FA6B /* AppButton.swift */; };
+		8F5F566A238CC38D0096FA6B /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5669238CC38D0096FA6B /* DayModel.swift */; };
+		8F5F566D238CC56E0096FA6B /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F566C238CC56E0096FA6B /* ActivityModel.swift */; };
+		8F5F5670238CC7730096FA6B /* ActivitiesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F5F566F238CC7730096FA6B /* ActivitiesView.storyboard */; };
+		8F5F5672238CCB4E0096FA6B /* ActivityTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5671238CCB4E0096FA6B /* ActivityTypeEnum.swift */; };
+		8F5F5674238CCCEB0096FA6B /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5673238CCCEB0096FA6B /* ActivitiesViewController.swift */; };
+		8F5F5676238CE03B0096FA6B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F5675238CE03B0096FA6B /* HeaderTableViewCell.swift */; };
 		8F7C96D82381751E00767AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96D72381751E00767AC7 /* AppDelegate.swift */; };
 		8F7C96DA2381751E00767AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C96D92381751E00767AC7 /* SceneDelegate.swift */; };
 		8F7C96E12381752100767AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C96E02381752100767AC7 /* Assets.xcassets */; };
@@ -31,6 +37,12 @@
 
 /* Begin PBXFileReference section */
 		8F5F5665238BE6000096FA6B /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		8F5F5669238CC38D0096FA6B /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		8F5F566C238CC56E0096FA6B /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		8F5F566F238CC7730096FA6B /* ActivitiesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesView.storyboard; sourceTree = "<group>"; };
+		8F5F5671238CCB4E0096FA6B /* ActivityTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeEnum.swift; sourceTree = "<group>"; };
+		8F5F5673238CCCEB0096FA6B /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		8F5F5675238CE03B0096FA6B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8F7C96D42381751E00767AC7 /* TravelPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7C96D72381751E00767AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F7C96D92381751E00767AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +85,33 @@
 			path = CustomControls;
 			sourceTree = "<group>";
 		};
+		8F5F5668238CC3660096FA6B /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				8F5F5669238CC38D0096FA6B /* DayModel.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		8F5F566B238CC5540096FA6B /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				8F5F566C238CC56E0096FA6B /* ActivityModel.swift */,
+				8F5F5671238CCB4E0096FA6B /* ActivityTypeEnum.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		8F5F566E238CC7280096FA6B /* ActivitiesView */ = {
+			isa = PBXGroup;
+			children = (
+				8F5F566F238CC7730096FA6B /* ActivitiesView.storyboard */,
+				8F5F5673238CCCEB0096FA6B /* ActivitiesViewController.swift */,
+				8F5F5675238CE03B0096FA6B /* HeaderTableViewCell.swift */,
+			);
+			path = ActivitiesView;
+			sourceTree = "<group>";
+		};
 		8F7C96CB2381751E00767AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +145,8 @@
 		8F7C96EB2381841D00767AC7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F5F566B238CC5540096FA6B /* Activity */,
+				8F5F5668238CC3660096FA6B /* Day */,
 				8F7C96EC2381843C00767AC7 /* Trip */,
 				8F7C96F12381868400767AC7 /* Data.swift */,
 			);
@@ -124,6 +165,7 @@
 		8F7C96F323818BDF00767AC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F5F566E238CC7280096FA6B /* ActivitiesView */,
 				8F7C970923823F1C00767AC7 /* AddTripView */,
 				8F7C96F423818BE900767AC7 /* TripsView */,
 			);
@@ -231,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5F5670238CC7730096FA6B /* ActivitiesView.storyboard in Resources */,
 				8F7C97042382307B00767AC7 /* Colors.xcassets in Resources */,
 				8FC4B31E2383DA51003BB6DD /* Images.xcassets in Resources */,
 				8F7C96E42381752100767AC7 /* LaunchScreen.storyboard in Resources */,
@@ -258,8 +301,13 @@
 				8F7C970623823A8C00767AC7 /* UIButtonExtensions.swift in Sources */,
 				8F7C96F823818C1A00767AC7 /* TripsViewController.swift in Sources */,
 				8F7C970B23823F7000767AC7 /* AddTripViewController.swift in Sources */,
+				8F5F566A238CC38D0096FA6B /* DayModel.swift in Sources */,
+				8F5F5672238CCB4E0096FA6B /* ActivityTypeEnum.swift in Sources */,
 				8F7C96F0238184B900767AC7 /* TripFunctions.swift in Sources */,
 				8F7C96FD23822A3600767AC7 /* UIViewExtension.swift in Sources */,
+				8F5F5674238CCCEB0096FA6B /* ActivitiesViewController.swift in Sources */,
+				8F5F5676238CE03B0096FA6B /* HeaderTableViewCell.swift in Sources */,
+				8F5F566D238CC56E0096FA6B /* ActivityModel.swift in Sources */,
 				8F7C96EE2381845700767AC7 /* TripModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

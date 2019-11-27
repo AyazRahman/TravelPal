@@ -29,10 +29,10 @@ class TripTableViewCell: UITableViewCell {
         tripNameLabel.text = trip.title
         cellImageView.image = nil
         if let tripImage = trip.image{
-            cellImageView.alpha = 0.3
+            cellImageView.alpha = 0
             cellImageView.image = tripImage
             UIView.animate(withDuration: 1) {
-                self.cellImageView.alpha = 1
+                self.cellImageView.alpha = 0.7
             }
         }
         

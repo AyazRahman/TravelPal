@@ -51,8 +51,6 @@ class AddTripViewController: UIViewController {
             titleLabel.text = "Edit Trip"
         }
         
-        
-        // Do any additional setup after loading the view.
     }
     
     

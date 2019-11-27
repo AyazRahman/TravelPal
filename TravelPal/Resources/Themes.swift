@@ -11,6 +11,8 @@ import UIKit
 class Theme {
     static let displayFont = "OleoScript-Regular"
     static let readingFont = "OpenSans-Regular"
+    static let bodyFont = "Avenir-Book"
+    static let bodyFontBold = "Avenir-Heavy"
     static let accent = UIColor(named: "Accent")
     static let background = UIColor(named: "Background")
     static let tint = UIColor(named: "Tint")
