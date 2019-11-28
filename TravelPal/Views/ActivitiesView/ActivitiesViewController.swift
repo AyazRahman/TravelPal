@@ -17,12 +17,43 @@ class ActivitiesViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var addButtonRef: UIButton!
+    
+    @IBAction func addButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "What would you like to add?", message: nil, preferredStyle: .actionSheet)
+        
+        let dayAction = UIAlertAction(title: "Day", style: .default, handler: handleAddDay)
+        let activityAction = UIAlertAction(title: "Activity", style: .default, handler: handleAddActivity)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.popoverPresentationController?.sourceView = sender
+        alert.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: sender.bounds.height)
+        
+        alert.addAction(dayAction)
+        alert.addAction(activityAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    fileprivate func handleAddDay(action: UIAlertAction){
+        let storyboard = UIStoryboard(name: "AddDayView", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()!
+        present(vc, animated: true)
+    }
+    
+    fileprivate func handleAddActivity(action: UIAlertAction){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        addButtonRef.createFloatingButton()
+        
         TripFunctions.readTrip(by: tripID) { [weak self] (model) in
             guard let self = self else {return}
             self.currentTrip = model

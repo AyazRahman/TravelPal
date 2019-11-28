@@ -126,6 +126,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EEc-w0-EMd">
+                                <rect key="frame" x="338" y="806" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" name="Background"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButton:" destination="h2y-58-ZpQ" eventType="touchUpInside" id="pLw-2A-6go"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -141,6 +152,7 @@
                         <viewLayoutGuide key="safeArea" id="EVG-5b-XiX"/>
                     </view>
                     <connections>
+                        <outlet property="addButtonRef" destination="EEc-w0-EMd" id="doX-BY-RnO"/>
                         <outlet property="backgroundImage" destination="ARQ-81-QMo" id="ZwL-aY-zyc"/>
                         <outlet property="tableView" destination="NNC-81-4qI" id="xhz-3e-41n"/>
                     </connections>

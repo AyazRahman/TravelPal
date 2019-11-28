@@ -62,12 +62,7 @@ class AddTripViewController: UIViewController {
         inputField.layer.borderWidth = 0
         inputField.placeholder = "Enter Trip Name"
         
-        guard inputField.text != "", let newTrip = inputField.text else{
-            inputField.layer.borderColor = UIColor.red.cgColor
-            inputField.layer.borderWidth = 1
-            inputField.layer.cornerRadius = 5
-            inputField.placeholder = "Name is required"
-
+        guard inputField.hasValue, let newTrip = inputField.text else{
             return
         }
         if let index = tripEditIndex{
@@ -83,7 +78,7 @@ class AddTripViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func addImageButton(_ sender: Any) {
+    @IBAction func addImageButton(_ sender: UIButton) {
         
         //define the actionSheet to show options
         let actionSheet = UIAlertController(title: "Image", message: "Select the source", preferredStyle: .actionSheet)
@@ -99,6 +94,10 @@ class AddTripViewController: UIViewController {
             }
         }))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        actionSheet.popoverPresentationController?.sourceView = sender
+        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: sender.bounds.height)
+        
         self.present(actionSheet, animated: true)
         
     }

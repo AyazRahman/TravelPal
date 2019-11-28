@@ -117,6 +117,7 @@ extension TripsViewController: UITableViewDelegate{
                 //tableView.reloadData()
             }))
             
+            
             self.present(alert, animated: true)
         }
         
