@@ -18,8 +18,8 @@ class AddDayViewController: UIViewController {
     @IBOutlet weak var saveButtonRef: UIButton!
     
     
-    var finishedAdding: (() -> ())?
-    var tripEditIndex: Int?
+    var finishedAdding: ((DayModel) -> ())?
+    var tripIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,10 @@ class AddDayViewController: UIViewController {
         guard subTitleField.hasValue, let newSubTitle = subTitleField.text else{
             return
         }
+        
+        let newDay = DayModel(title: newTitle, subTitle: newSubTitle)
+        
+        DayFunctions.createDays(at: tripIndex, using: newDay)
         /*if let index = tripEditIndex{
             TripFunctions.updateTrip(at: index, title: newTrip, image: imageView.image)
         }else{
@@ -67,7 +71,7 @@ class AddDayViewController: UIViewController {
         }*/
         
         if let finishedAdding = finishedAdding{
-            finishedAdding()
+            finishedAdding(newDay)
         }
         
         dismiss(animated: true)

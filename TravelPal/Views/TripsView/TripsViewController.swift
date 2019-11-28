@@ -67,8 +67,9 @@ class TripsViewController: UIViewController {
             let destination = segue.destination as! AddTripViewController
             destination.tripEditIndex = tripEditIndex
             destination.finishedAdding = { [weak self] in
-                self?.tableView.reloadData()
-                self?.showHelp()
+                guard let self = self else {return}
+                self.tableView.reloadData()
+                self.showHelp()
             }
             tripEditIndex = nil
         }

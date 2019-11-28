@@ -38,12 +38,33 @@ class ActivitiesViewController: UIViewController {
     
     fileprivate func handleAddDay(action: UIAlertAction){
         let storyboard = UIStoryboard(name: "AddDayView", bundle: nil)
-        let vc = storyboard.instantiateInitialViewController()!
+        let vc = storyboard.instantiateInitialViewController() as! AddDayViewController
+        vc.tripIndex = Data.trips.firstIndex(where: { $0.id == tripID })
+        vc.finishedAdding = {[weak self] dayModel in
+            guard let self = self else {return}
+            let indexArray = [self.currentTrip?.days.count ?? 0]
+            
+            self.currentTrip?.days.append(dayModel)
+            
+            self.tableView.insertSections(IndexSet(indexArray), with: .automatic)
+        }
         present(vc, animated: true)
     }
     
     fileprivate func handleAddActivity(action: UIAlertAction){
         
+    }
+    
+    fileprivate func updateTripData() {
+        TripFunctions.readTrip(by: tripID) { [weak self] (model) in
+            guard let self = self else {return}
+            self.currentTrip = model
+            
+            guard let model = model else {return}
+            self.title = model.title
+            self.backgroundImage.image = model.image
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -54,16 +75,7 @@ class ActivitiesViewController: UIViewController {
         
         addButtonRef.createFloatingButton()
         
-        TripFunctions.readTrip(by: tripID) { [weak self] (model) in
-            guard let self = self else {return}
-            self.currentTrip = model
-            
-            guard let model = model else {return}
-            self.title = model.title
-            self.backgroundImage.image = model.image
-            self.tableView.reloadData()
-            
-        }
+        updateTripData()
         
         sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 0
     }
