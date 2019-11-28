@@ -11,16 +11,26 @@ import Foundation
 struct DayModel{
     let id: String
     var title: String = ""
-    var subTitle: String = ""
+    var date: Date = Date()
     var activities = [ActivityModel]()
     
-    init(title: String, subTitle: String, activities: [ActivityModel]? = nil){
+    init(title: String, subTitle: Date, activities: [ActivityModel]? = nil){
         id = UUID().uuidString
         self.title = title
-        self.subTitle = subTitle
+        self.date = subTitle
         
         if let data = activities{
             self.activities = data
         }
+    }
+}
+
+extension DayModel: Comparable{
+    static func < (lhs: DayModel, rhs: DayModel) -> Bool {
+        return lhs.date < rhs.date
+    }
+    
+    static func == (lhs: DayModel, rhs: DayModel) -> Bool {
+        return lhs.id == rhs.id
     }
 }

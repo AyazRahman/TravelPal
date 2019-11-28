@@ -39,6 +39,7 @@
 		8FF50431238F513900DEFD84 /* AddDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF50430238F513900DEFD84 /* AddDayViewController.swift */; };
 		8FF50435238F5C0800DEFD84 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF50434238F5C0800DEFD84 /* UITextFieldExtension.swift */; };
 		8FF50437238F5F2000DEFD84 /* DayFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF50436238F5F2000DEFD84 /* DayFunctions.swift */; };
+		8FF50439238F7CA900DEFD84 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF50438238F7CA900DEFD84 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		8FF50430238F513900DEFD84 /* AddDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayViewController.swift; sourceTree = "<group>"; };
 		8FF50434238F5C0800DEFD84 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		8FF50436238F5F2000DEFD84 /* DayFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFunctions.swift; sourceTree = "<group>"; };
+		8FF50438238F7CA900DEFD84 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				8F7C970523823A8C00767AC7 /* UIButtonExtension.swift */,
 				8F5F5679238E74E50096FA6B /* UITableViewCellExtension.swift */,
 				8FF50434238F5C0800DEFD84 /* UITextFieldExtension.swift */,
+				8FF50438238F7CA900DEFD84 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				8F7C96F0238184B900767AC7 /* TripFunctions.swift in Sources */,
 				8FF50437238F5F2000DEFD84 /* DayFunctions.swift in Sources */,
 				8F7C96FD23822A3600767AC7 /* UIViewExtension.swift in Sources */,
+				8FF50439238F7CA900DEFD84 /* DateExtension.swift in Sources */,
 				8F5F567A238E74E50096FA6B /* UITableViewCellExtension.swift in Sources */,
 				8F5F5674238CCCEB0096FA6B /* ActivitiesViewController.swift in Sources */,
 				8F5F5676238CE03B0096FA6B /* HeaderTableViewCell.swift in Sources */,

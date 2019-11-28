@@ -16,16 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AS8-kN-Ph4">
-                                <rect key="frame" x="20" y="313" width="374" height="270"/>
+                                <rect key="frame" x="20" y="274" width="374" height="348"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n7P-OS-ttO">
                                         <rect key="frame" x="8" y="86" width="358" height="34"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rc-or-3qk">
-                                        <rect key="frame" x="8" y="218" width="100" height="44"/>
+                                        <rect key="frame" x="8" y="296" width="100" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Cancel"/>
@@ -34,7 +34,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDl-jn-4he">
-                                        <rect key="frame" x="266" y="218" width="100" height="44"/>
+                                        <rect key="frame" x="266" y="296" width="100" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
@@ -48,16 +48,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mth-5p-ynV">
-                                        <rect key="frame" x="8" y="145" width="358" height="34"/>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="OTY-d8-a36">
+                                        <rect key="frame" x="8" y="127" width="358" height="145"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                    </textField>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="B4I-aY-KYW"/>
+                                    <constraint firstAttribute="height" constant="348" id="B4I-aY-KYW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -71,9 +69,9 @@
                     </view>
                     <connections>
                         <outlet property="cancelButtonRef" destination="2Rc-or-3qk" id="Unz-x6-Z8m"/>
+                        <outlet property="datePicker" destination="OTY-d8-a36" id="hhv-jn-GKm"/>
                         <outlet property="popUpView" destination="AS8-kN-Ph4" id="ctP-vH-eFu"/>
                         <outlet property="saveButtonRef" destination="KDl-jn-4he" id="Xwb-s4-BeJ"/>
-                        <outlet property="subTitleField" destination="Mth-5p-ynV" id="qbH-98-QjB"/>
                         <outlet property="titleField" destination="n7P-OS-ttO" id="PKY-YG-PYJ"/>
                         <outlet property="titleLabel" destination="o8x-lj-mRV" id="A7t-wO-5YW"/>
                     </connections>

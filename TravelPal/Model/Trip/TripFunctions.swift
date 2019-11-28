@@ -18,7 +18,7 @@ class TripFunctions {
     
     static func readTrips(completion: @escaping () -> ()){
         let activity = ActivityModel(title: "From Melbourne", subTitle: "12:25 - 13:45", activityType: .flight)
-        let day = DayModel(title: "Departure", subTitle: "November 14", activities: [activity])
+        let day = DayModel(title: "Departure", subTitle: Date(), activities: [activity])
         DispatchQueue.global(qos: .userInitiated).async {
             if Data.trips.count == 0 {
                 Data.trips.append(TripModel(title: "Russia", days: [day]))

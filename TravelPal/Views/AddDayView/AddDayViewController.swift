@@ -13,13 +13,14 @@ class AddDayViewController: UIViewController {
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var subTitleField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var cancelButtonRef: UIButton!
     @IBOutlet weak var saveButtonRef: UIButton!
     
     
     var finishedAdding: ((DayModel) -> ())?
     var tripIndex: Int!
+    var currentTrip: TripModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +58,22 @@ class AddDayViewController: UIViewController {
         guard titleField.hasValue, let newTitle = titleField.text else{
             return
         }
-        guard subTitleField.hasValue, let newSubTitle = subTitleField.text else{
+/*        guard subTitleField.hasValue, let newSubTitle = subTitleField.text else{
+            return
+        }*/
+        if dateAlreadyExists(datePicker.date){
+            
+            let alert = UIAlertController(title: "Day Already Exist", message: "Choose another date", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .cancel)
+            alert.addAction(okAction)
+            
+            present(alert, animated: true)
+            
             return
         }
         
-        let newDay = DayModel(title: newTitle, subTitle: newSubTitle)
+        
+        let newDay = DayModel(title: newTitle, subTitle: datePicker.date)
         
         DayFunctions.createDays(at: tripIndex, using: newDay)
         /*if let index = tripEditIndex{
@@ -75,6 +87,13 @@ class AddDayViewController: UIViewController {
         }
         
         dismiss(animated: true)
+    }
+    
+    fileprivate func dateAlreadyExists(_ date: Date) -> Bool {
+        if currentTrip.days.contains(where: { $0.date.mediumDate() == date.mediumDate() }){
+            return true
+        }
+        return false
     }
     
 }

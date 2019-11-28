@@ -40,11 +40,14 @@ class ActivitiesViewController: UIViewController {
         let storyboard = UIStoryboard(name: "AddDayView", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! AddDayViewController
         vc.tripIndex = Data.trips.firstIndex(where: { $0.id == tripID })
+        vc.currentTrip = currentTrip
         vc.finishedAdding = {[weak self] dayModel in
             guard let self = self else {return}
-            let indexArray = [self.currentTrip?.days.count ?? 0]
+            //let indexArray = [self.currentTrip?.days.count ?? 0]
             
             self.currentTrip?.days.append(dayModel)
+            
+            let indexArray = [self.currentTrip?.days.firstIndex(of: dayModel) ?? 0]
             
             self.tableView.insertSections(IndexSet(indexArray), with: .automatic)
         }
